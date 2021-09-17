@@ -1,4 +1,4 @@
-let users = require('')
+let users = require('./users');
 
 let comments = {
     lista:[
@@ -24,3 +24,4 @@ let comments = {
         {post_id: 5, user: users.findByUsername('Nicolas'), contenido: 'Buenisimaa!', fecha: '29 de octubre',likes: 1},
     ]
 }
+module.exports = comments;
