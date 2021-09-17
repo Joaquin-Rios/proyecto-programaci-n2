@@ -5,7 +5,7 @@ let posts = {
         {
             id: 1,
             contenido: 'Ford Falcon, una nave, con caño de escape nuevo',
-            imagen: 14,
+            imagen: '/images/fordFalcon.jpg',
             date: '18 de octubre',
             user_id: 1,
             user: {id: 1, username:'Francisco', firstName: 'Rodriguez'},
@@ -15,7 +15,7 @@ let posts = {
         {
             id: 2,
             contenido: 'Peugeot 208 nuevo recien salido del taller',
-            imagen: 14,
+            imagen: '/images/Peugeot208.jpg',
             date: '19 de octubre',
             user_id: 2,
             user: {id: 2, username:'Pablo', firstName: 'Gonzales'},
@@ -25,7 +25,7 @@ let posts = {
         {
             id: 3,
             contenido: 'Disfrutando un dia de carrera con amigos',
-            imagen: 14,
+            imagen: '/images/DiaDeCarrera.jpg',
             date: '21 de octubre',
             user_id: 3,
             user: {id: 3, username:'Cristian ', firstName: 'Fabianni'},
@@ -35,7 +35,7 @@ let posts = {
         {
             id: 4,
             contenido: 'Ferrari en Libertador, Pepino',
-            imagen: 14,
+            imagen: '/images/ferrari.jpg',
             date: '25 de octubre',
             user_id: 4,
             user: {id: 4, username:'Carla', firstName: 'Dominguez'},
@@ -44,8 +44,8 @@ let posts = {
         },
         {
             id: 5,
-            contenido: 'Nueva camioneta Toyota Hilux 2020',
-            imagen: 14,
+            contenido: 'Nueva camioneta Toyota Hilux 2021',
+            imagen: '/images/toyotaHilux.jpg',
             date: '26 de octubre',
             user_id: 5,
             user: {id: 5, username:'Fernando', firstName: 'Menendez'},
