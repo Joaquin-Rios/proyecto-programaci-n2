@@ -1,7 +1,10 @@
 
 let postsController = {
-    index : function(req, res) {
-                res.send('respond with a resource');
+    agregarPost : function(req, res) {
+        res.render('agregarPost');
+    },
+    detallePost : function(req, res) {
+                res.render('detallePost');
             },
 
 

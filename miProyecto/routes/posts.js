@@ -3,7 +3,8 @@ var router = express.Router();
 
 var postsController = require('../controllers/postController');
 /* GET home page. */
-router.get('/', postsController.index);
+router.get('/agregarPost', postsController.agregarPost);
+router.get('/detallePost', postsController.detallePost);
 //router.get('/login', indexController.login);
 //router.get('/register', indexController.register);
 

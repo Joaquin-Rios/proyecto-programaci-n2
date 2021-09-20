@@ -1,8 +1,8 @@
 
 
 let userController = {
-    index : function(req, res) {
-                res.send('respond with a resource');
+    detalleUsuario : function(req, res) {
+                res.render('detalleUsuario');
             },
 
 
