@@ -22,6 +22,15 @@ let comments = {
         {post_id: 5, user: users.findByUsername('Leonel'), contenido: 'Increible felicitaciones!', fecha: '27 de octubre',likes: 1},
         {post_id: 5, user: users.findByUsername('Martin'), contenido: 'Te lo mereces, abrazo', fecha: '28 de octubre',likes: 1},
         {post_id: 5, user: users.findByUsername('Nicolas'), contenido: 'Buenisimaa!', fecha: '29 de octubre',likes: 1},
-    ]
+    ],
+    findByPost: function (postId) {
+        let results = [];
+        for (let i = 0; comments.lista.length; i++){
+            if(comments.lista[i].post_id == postId){
+                result.push(comments.lista[i]);
+            }
+        }
+        return results;
+    },
 }
 module.exports = comments;

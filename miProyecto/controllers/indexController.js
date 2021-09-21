@@ -1,9 +1,10 @@
-//let comentarios = require('../modules/comments');
-//let posts = require('../modules/posts');
+const posts = require("../data/posts");
+
+
 
 let indexController = {
     index: function (req, res) {
-                res.render('index', { title: 'Express' });
+                res.render('index', {posts: posts.lista});
             },
     login: function (req, res) {
                 res.render('login');            

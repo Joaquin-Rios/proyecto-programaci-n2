@@ -1,4 +1,4 @@
-let comments = require('./comments')
+//let comments = require('./comments')
 
 let posts = {
     lista: [
@@ -10,7 +10,7 @@ let posts = {
             user_id: 1,
             user: {id: 1, username:'Francisco', firstName: 'Rodriguez'},
             likes: 18,
-            comentarios: comments.findByPost(1)
+            //comentarios: comments.findByPost(1)
         },
         {
             id: 2,
@@ -20,7 +20,7 @@ let posts = {
             user_id: 2,
             user: {id: 2, username:'Pablo', firstName: 'Gonzales'},
             likes: 120,
-            comentarios: comments.findByPost(2)
+            //comentarios: comments.findByPost(2)
         },
         {
             id: 3,
@@ -28,9 +28,9 @@ let posts = {
             imagen: '/images/DiaDeCarrera.jpg',
             date: '21 de octubre',
             user_id: 3,
-            user: {id: 3, username:'Cristian ', firstName: 'Fabianni'},
+            user: {id: 3, username:'Cristian', firstName: 'Fabianni'},
             likes: 180,
-            comentarios: comments.findByPost(3)
+            //comentarios: comments.findByPost(3)
         },
         {
             id: 4,
@@ -40,7 +40,7 @@ let posts = {
             user_id: 4,
             user: {id: 4, username:'Carla', firstName: 'Dominguez'},
             likes: 43,
-            comentarios: comments.findByPost(4)
+            //comentarios: comments.findByPost(4)
         },
         {
             id: 5,
@@ -50,7 +50,7 @@ let posts = {
             user_id: 5,
             user: {id: 5, username:'Fernando', firstName: 'Menendez'},
             likes: 55,
-            comentarios: comments.findByPost(5)
+            //comentarios: comments.findByPost(5)
         }
     ]
 }
