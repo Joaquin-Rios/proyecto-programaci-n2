@@ -9,7 +9,7 @@ let posts = {
             date: '18 de octubre',
             user_id: 1,
             user: {id: 1, username:'Francisco', firstName: 'Rodriguez'},
-            likes: 18,
+            likes: 18, 
             //comentarios: comments.findByPost(1)
         },
         {

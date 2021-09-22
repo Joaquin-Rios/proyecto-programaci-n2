@@ -8,17 +8,57 @@
         <main>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
-                    <form action="">
-                        
-                        <h2>(Formulario de registración)
-                            
-                        </h2>
-                
-                    </form>
+                    <form>
+                        <div class="text">
+                            <label for="name">Usuario</label>
+                        </div>
+                        <div class="box">
+                            <input type="text" id="nombre" name="nombre" value="" placeholder="Introduce un nombre de perfil" >
+                        </div>
+        
+                        <div class="text">
+                            <label for="email">¿Cual es tu correo electronico?</label>
+                        </div>
+                        <div class="box">
+                            <input type="email" id="mail" name="mail" value="" placeholder="Introduce su correo electronico" >
+                        </div>
+        
+                        <div class="text">
+                            <label for="password">Crea una contraseña</label>
+                        </div>
+                        <div class="box">
+                            <input type="password" id="contraseña" name="contraseña" value="" placeholder="Crea una contraseña" >
+                        </div>
+        
+                        <div class="text">
+                            <label for="date">¿Cual es tu fecha de nacimiento?</label>
+                        </div>
+                        <div class="box">
+                            <input type="date"  id="date" name="date" id="nombre" placeholder="" >
+                        </div>
+        
+                        <div class="text">
+                            <label for="gender">¿Cual es tu sexo?</label>
+                        </div>
+                        <div class="box">
+                            <input type="radio" id="genero" name="genero" value="" ><label>Hombre</label>
+                            <input type="radio" id="genero" name="genero" value="" ><label>Mujer</label>
+                            <input type="radio" id="genero" name="genero" value="" ><label>Otro</label>
+                        </div>
+        
+                        <div class="verificacion">
+                            <input type="checkbox" id="verificacion" name="verificacion" value=""> <label>Compartirt mis datos de registro con los creadores de MusicOn para fines de marketing</label>
+                        </div>
+
+                        <div class="boton">
+                            <button  type="submit" id="boton">Registrate</button>
+                        </div> 
+                    
+                    </form> 
                 </div>
             </div>
         </main>
         <%- include('./partials/footer') %>
         <!--FOOTER-->
     </body>
-</html>
+</html> 
