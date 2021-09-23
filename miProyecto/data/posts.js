@@ -10,6 +10,7 @@ let posts = {
             user_id: 1,
             user: {id: 1, username:'Francisco', firstName: 'Rodriguez'},
             likes: 18, 
+            fotoPerfil: '/images/usuario1.jpg'
             //comentarios: comments.findByPost(1)
         },
         {
@@ -20,6 +21,7 @@ let posts = {
             user_id: 2,
             user: {id: 2, username:'Pablo', firstName: 'Gonzales'},
             likes: 120,
+            fotoPerfil:'/images/usuario2.jpg'
             //comentarios: comments.findByPost(2)
         },
         {
@@ -30,6 +32,7 @@ let posts = {
             user_id: 3,
             user: {id: 3, username:'Cristian', firstName: 'Fabianni'},
             likes: 180,
+            fotoPerfil:'/images/usuario3.jpg'
             //comentarios: comments.findByPost(3)
         },
         {
@@ -40,6 +43,7 @@ let posts = {
             user_id: 4,
             user: {id: 4, username:'Carla', firstName: 'Dominguez'},
             likes: 43,
+            fotoPerfil:'/images/usuario4.jpg'
             //comentarios: comments.findByPost(4)
         },
         {
@@ -50,6 +54,7 @@ let posts = {
             user_id: 5,
             user: {id: 5, username:'Fernando', firstName: 'Menendez'},
             likes: 55,
+            fotoPerfil:'/images/usuario5.jpg'
             //comentarios: comments.findByPost(5)
         }
     ]

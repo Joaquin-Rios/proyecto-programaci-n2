@@ -1,5 +1,5 @@
 const posts = require("../data/posts");
-
+//let users = require ('../data/users')
 
 
 let indexController = {
@@ -11,6 +11,9 @@ let indexController = {
             },
     register: function (req, res) {
                 res.render('register');            
+            },
+    fotoPerfil : function(req, res) {
+                res.render('index', {posts: posts.lista });
             },
 }
 

@@ -14,6 +14,11 @@ article.post div.info-usuario img{
     padding: 1px;
     border: 1.5px solid red;
 }
+.fotoPerfil img{
+    border-radius: 50px;
+    padding: 1px;
+    width: 30px;
+}
 article.post div.info-usuario h4{
    margin: 8px 10px;
 }
