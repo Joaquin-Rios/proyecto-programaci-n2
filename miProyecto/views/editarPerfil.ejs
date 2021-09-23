@@ -8,11 +8,58 @@
         <main>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
-                    <form action="">
+                    <form>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Seleccionar nueva imagen de perfil</label>
+                            <input type="file" class="form-control" id="image">
+                        </div>
                         
-                        <h2>(Formulario para editar los datos de perfil del usuario)</h2>
-                
-                    </form>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="text">
+                            <label for="name"> Cambiar nombre de usuario actual</label>
+                        </div>
+                        <div class="box">
+                            <input type="text" id="nombre" name="nombre" value="" placeholder="Introduce un nuevo nombre de usuario" >
+                        </div>
+        
+                        <div class="text">
+                            <label for="text">Sitio Web</label>
+                        </div>
+                        <div class="box">
+                            <input type="text" id="sitio web" name="sitio web" value="" placeholder="Introduce su Sitio Web" >
+                        </div>
+        
+                        <div class="text">
+                            <label for="description">Biografía</label>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                              <label for="floatingTextarea">Coloque su Biografía aquí</label>
+                            </div>
+                        </div>
+        
+                        <div class="text">
+                            <label for="date">Fecha de nacimiento</label>
+                        </div>
+                        <div class="box">
+                            <input type="date"  id="date" name="date" id="nombre" placeholder="" >
+                        </div>
+        
+                        <div class="text">
+                            <label for="gender">Sexo</label>
+                        </div>
+                        <div class="box">
+                            <input type="radio" id="genero" name="genero" value="" ><label>Hombre</label>
+                            <input type="radio" id="genero" name="genero" value="" ><label>Mujer</label>
+                            <input type="radio" id="genero" name="genero" value="" ><label>Otro</label>
+                        </div>
+
+                        <div class="boton">
+                            <button  type="submit" id="boton">Guardar cambios</button>
+                        </div> 
+                    
+                    </form> 
                 </div>
             </div>
         </main>
