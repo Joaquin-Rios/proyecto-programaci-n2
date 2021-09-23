@@ -1,4 +1,4 @@
-//let comments = require('./comments')
+let comments = require('./comments')
 
 let posts = {
     lista: [
@@ -10,8 +10,8 @@ let posts = {
             user_id: 1,
             user: {id: 1, username:'Francisco', firstName: 'Rodriguez'},
             likes: 18, 
-            fotoPerfil: '/images/usuario1.jpg'
-            //comentarios: comments.findByPost(1)
+            fotoPerfil: '/images/usuario1.jpg',
+            comentarios: comments.findByPost(1)
         },
         {
             id: 2,
@@ -21,8 +21,8 @@ let posts = {
             user_id: 2,
             user: {id: 2, username:'Pablo', firstName: 'Gonzales'},
             likes: 120,
-            fotoPerfil:'/images/usuario2.jpg'
-            //comentarios: comments.findByPost(2)
+            fotoPerfil:'/images/usuario2.jpg',
+            comentarios: comments.findByPost(2)
         },
         {
             id: 3,
@@ -32,8 +32,8 @@ let posts = {
             user_id: 3,
             user: {id: 3, username:'Cristian', firstName: 'Fabianni'},
             likes: 180,
-            fotoPerfil:'/images/usuario3.jpg'
-            //comentarios: comments.findByPost(3)
+            fotoPerfil:'/images/usuario3.jpg',
+            comentarios: comments.findByPost(3)
         },
         {
             id: 4,
@@ -43,8 +43,8 @@ let posts = {
             user_id: 4,
             user: {id: 4, username:'Carla', firstName: 'Dominguez'},
             likes: 43,
-            fotoPerfil:'/images/usuario4.jpg'
-            //comentarios: comments.findByPost(4)
+            fotoPerfil:'/images/usuario4.jpg',
+            comentarios: comments.findByPost(4)
         },
         {
             id: 5,
@@ -54,9 +54,26 @@ let posts = {
             user_id: 5,
             user: {id: 5, username:'Fernando', firstName: 'Menendez'},
             likes: 55,
-            fotoPerfil:'/images/usuario5.jpg'
-            //comentarios: comments.findByPost(5)
+            fotoPerfil:'/images/usuario5.jpg',
+            comentarios: comments.findByPost(5)
         }
-    ]
+    ],
+    find : function (id) {
+        for (let index = 0; index < posts.lista.length; index++) {
+            if (posts.lista[index].id == id) {
+                return posts.lista[index]
+                
+            }
+        }
+    },
+    findById : function (id) {
+        for (let i = 0; i < posts.lista.length; i++) {
+            let elem = posts.lista[i];
+            if (elem.id == id) {
+                return elem;
+            }
+        }
+            
+    }
 }
 module.exports = posts;

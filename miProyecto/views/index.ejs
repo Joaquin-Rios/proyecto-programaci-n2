@@ -18,7 +18,7 @@
                                 <h4><a href="/users/detalleUsuario"><%= post.user.username %><%= post.user.firstName %></a></h4>
                             </div>
                             <div class="post-body uk-flex uk-flex-center">
-                                <a href="/posts/detallePost">
+                                <a href="/posts/detallePost <%= post.id %>">
                                     <img src=" <%= post.imagen %>" alt="">
                                 </a>
                             </div>
@@ -34,27 +34,30 @@
                                     <p class="uk-width-5-6"><%= post.contenido %></p>
                                 </div>
                             </div>
-                            <%//post.comentario.forEach( comentario => {  %> 
+
+                                <h6>Comentarios</h6>
+                            <%post.comentarios.forEach( comentario => {  %> 
                                 <div class="post-comentarios">
-                                    <h6>Comentarios</h6>
+                                    
                                     <ul>
                                         <li>
-                                            <a href="detalleUsuario.html">Usuario</a>
-                                            <p>Comentario</p>
+                                            <a href="/users/detalleUsuario"><h3><%= comentario.user %></h3></a>
+                                            <p><%= comentario.contenido %></p>
                                         </li>
-                                        <li>
-                                            <a href="detalleUsuario.html">Usuario</a>
-                                            <p>Comentario</p>
-                                        </li>
-                                        <a href="/posts/detallePost">Ver más...</a>
+                                       
+                                        
                                     </ul>
                                 </div>
-                             <% //}); %>
+                             <% }); %>
+                                <a href="/posts/detallePost">Ver más...</a>
                             
                         </article>
-                    
+
 
                     <% }); %>
+                    
+
+                    
                     
 
                     <!--<article class="post uk-card-default uk-flex uk-flex-column">

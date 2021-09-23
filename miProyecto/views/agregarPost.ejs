@@ -8,10 +8,20 @@
         <main>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex">
-                    <form action="">
-                        <h2>(Formulario para agregar un post)</h2>
-
-                    </form>
+                    <h1>Agregar Publicación</h1>
+                    <form>
+                        <div class="mb-3">
+                          <label for="image" class="form-label">Imagen</label>
+                          <input type="file" class="form-control" id="image">
+                        </div>
+                        <div class="mb-3">
+                          <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                            <label for="floatingTextarea">Contenido</label>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
 
                 </div>
             </div>

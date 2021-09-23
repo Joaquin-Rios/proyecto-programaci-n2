@@ -2,7 +2,7 @@ let users = require('./users');
 
 let comments = {
     lista:[
-        {post_id: 1, user: users.findByUsername('Pablo'), contenido: 'Uff que lindo fierro', fecha: '18 de octubre',likes: 1},
+        {post_id: 1, user: 'Pablo', contenido: 'Uff que lindo fierro', fecha: '18 de octubre',likes: 1},
         {post_id: 1, user: users.findByUsername('Fernando'), contenido: 'Que lindo color, esta divino', fecha: '19 de octubre',likes: 1},
         {post_id: 1, user: users.findByUsername('Cristian'), contenido: 'Mi viejo tenia uno igual!', fecha: '20 de octubre',likes: 1},
         {post_id: 1, user: users.findByUsername('Jorge'), contenido: 'Impecable!!', fecha: '20 de octubre',likes: 1},
@@ -25,9 +25,9 @@ let comments = {
     ],
     findByPost: function (postId) {
         let results = [];
-        for (let i = 0; comments.lista.length; i++){
-            if(comments.lista[i].post_id == postId){
-                result.push(comments.lista[i]);
+        for (let i = 0; i < comments.lista.length; i++){
+            if(comments.lista[i].post_id === postId){
+                results.push(comments.lista[i]);
             }
         }
         return results;
