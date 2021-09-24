@@ -4,10 +4,10 @@ let posts = require ('../data/posts')
 let userController = {
     detalleUsuario : function(req, res) {
         //userId = usuarios.findUsername(req.params.id)
-        res.render('detalleUsuario', { user: users.findByUsername(req.params.username), post: posts.lista});
+        res.render('detalleUsuario', { user: users.list[req.params.username]});
         },
     miPerfil : function(req, res) {
-        res.render('miPerfil');
+        res.render('miPerfil', { user: users.list[0] });
         },
     editarPerfil : function(req, res) {
         res.render('editarPerfil');

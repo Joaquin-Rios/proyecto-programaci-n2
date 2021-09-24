@@ -4,7 +4,7 @@ let users = require ('./users');
 let posts = {
     lista: [
         {
-            id: 1,
+            id: 0,
             contenido: 'Ford Falcon, una nave, con caño de escape nuevo',
             imagen: '/images/fordFalcon.jpg',
             date: '18 de octubre',
@@ -16,7 +16,7 @@ let posts = {
             infoUsers: users.findByUser(1),
         },
         {
-            id: 2,
+            id: 1,
             contenido: 'Peugeot 208 nuevo recien salido del taller',
             imagen: '/images/Peugeot208.jpg',
             date: '19 de octubre',
@@ -28,7 +28,7 @@ let posts = {
             infoUsers: users.findByUser(2),
         },
         {
-            id: 3,
+            id: 2,
             contenido: 'Disfrutando un dia de carrera con amigos',
             imagen: '/images/DiaDeCarrera.jpg',
             date: '21 de octubre',
@@ -40,7 +40,7 @@ let posts = {
             infoUsers: users.findByUser(3),
         },
         {
-            id: 4,
+            id: 3,
             contenido: 'Ferrari en Libertador, Pepino',
             imagen: '/images/ferrari.jpg',
             date: '25 de octubre',
@@ -52,7 +52,7 @@ let posts = {
             infoUsers: users.findByUser(4),
         },
         {
-            id: 5,
+            id: 4,
             contenido: 'Nueva camioneta Toyota Hilux 2021',
             imagen: '/images/toyotaHilux.jpg',
             date: '26 de octubre',
