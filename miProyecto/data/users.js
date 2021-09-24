@@ -4,7 +4,7 @@ let users ={
             id: 1,
             username: 'FranciscoRodriguez',
             seguidores:300, 
-            publicaciones:50,
+            publicaciones:1,
             seguidos:100,
             fotoPerfil: '/images/usuario1.jpg'
         },
@@ -12,7 +12,7 @@ let users ={
             id: 2,
             username: 'PabloGonzales',
             seguidores:200, 
-            publicaciones:70,
+            publicaciones:1,
             seguidos:300,
             fotoPerfil:'/images/usuario2.jpg'
         },
@@ -20,15 +20,15 @@ let users ={
             id: 3,
             username: 'CristianFabianni',
             seguidores:100, 
-            publicaciones:50,
+            publicaciones:1,
             seguidos:100,
             fotoPerfil:'/images/usuario3.jpg'
         },
         {
             id: 4,
-            username: 'Carla Dominguez',
+            username: 'CarlaDominguez',
             seguidores:400, 
-            publicaciones:20,
+            publicaciones:1,
             seguidos:500,
             fotoPerfil:'/images/usuario4.jpg'
         },
@@ -36,7 +36,7 @@ let users ={
             id: 5,
             username: 'FernandoMenendez',
             seguidores:800, 
-            publicaciones:80,
+            publicaciones:1,
             seguidos:100,
             fotoPerfil:'/images/usuario5.jpg'
         }
@@ -48,7 +48,24 @@ let users ={
                 return users.list[index];
             }
         }
-    }    
+    },
+    findByUser: function (Id) {
+        let results = [];
+        for (let i = 0; i < users.list.length; i++){
+            if(users.list[i].id === Id){
+                results.push(users.list[i]);
+            }
+        }
+        return results;
+    },
+    
+    //findUsername: function (id) {
+        //for(let i = 0; i < users.list.length; i++){
+            //if(users.list[i].id == id){
+                //return users.list[i]
+            //}
+       //}
+    //}
 }
 
 module.exports = users;

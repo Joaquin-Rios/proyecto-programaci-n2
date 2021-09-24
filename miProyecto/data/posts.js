@@ -1,4 +1,5 @@
-let comments = require('./comments')
+let comments = require('./comments');
+let users = require ('./users');
 
 let posts = {
     lista: [
@@ -11,7 +12,8 @@ let posts = {
             user: {id: 1, username:'Francisco', firstName: 'Rodriguez'},
             likes: 18, 
             fotoPerfil: '/images/usuario1.jpg',
-            comentarios: comments.findByPost(1)
+            comentarios: comments.findByPost(1),
+            infoUsers: users.findByUser(1),
         },
         {
             id: 2,
@@ -22,7 +24,8 @@ let posts = {
             user: {id: 2, username:'Pablo', firstName: 'Gonzales'},
             likes: 120,
             fotoPerfil:'/images/usuario2.jpg',
-            comentarios: comments.findByPost(2)
+            comentarios: comments.findByPost(2),
+            infoUsers: users.findByUser(2),
         },
         {
             id: 3,
@@ -33,7 +36,8 @@ let posts = {
             user: {id: 3, username:'Cristian', firstName: 'Fabianni'},
             likes: 180,
             fotoPerfil:'/images/usuario3.jpg',
-            comentarios: comments.findByPost(3)
+            comentarios: comments.findByPost(3),
+            infoUsers: users.findByUser(3),
         },
         {
             id: 4,
@@ -44,7 +48,8 @@ let posts = {
             user: {id: 4, username:'Carla', firstName: 'Dominguez'},
             likes: 43,
             fotoPerfil:'/images/usuario4.jpg',
-            comentarios: comments.findByPost(4)
+            comentarios: comments.findByPost(4),
+            infoUsers: users.findByUser(4),
         },
         {
             id: 5,
@@ -55,7 +60,8 @@ let posts = {
             user: {id: 5, username:'Fernando', firstName: 'Menendez'},
             likes: 55,
             fotoPerfil:'/images/usuario5.jpg',
-            comentarios: comments.findByPost(5)
+            comentarios: comments.findByPost(5),
+            infoUsers: users.findByUser(5),
         }
     ],
     find : function (id) {
@@ -74,6 +80,7 @@ let posts = {
             }
         }
             
-    }
+    },
+    
 }
 module.exports = posts;

@@ -6,4 +6,5 @@ var usersController = require('../controllers/userController');
 router.get('/detalleUsuario/:username', usersController.detalleUsuario);
 router.get('/miPerfil', usersController.miPerfil);
 router.get('/editarPerfil', usersController.editarPerfil);
+
 module.exports = router;
