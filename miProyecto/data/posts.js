@@ -62,6 +62,18 @@ let posts = {
             fotoPerfil:'/images/usuario5.jpg',
             comentarios: comments.findByPost(5),
             infoUsers: users.findByUser(5),
+        },
+        {
+            id: 5,
+            contenido: 'Sacando a pasear el nuevo auto!',
+            imagen: '/images/autoRojo.jpg',
+            date: '26 de octubre',
+            user_id: 5,
+            user: {id: 5, username:'Martin', firstName: 'Gutierrez'},
+            likes: 55,
+            fotoPerfil:'/images/usuario1.jpg',
+            comentarios: comments.findByPost(5),
+            infoUsers: users.findByUser(5),
         }
     ],
     find : function (id) {

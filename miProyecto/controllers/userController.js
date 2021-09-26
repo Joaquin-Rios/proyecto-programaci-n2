@@ -7,7 +7,7 @@ let userController = {
         res.render('detalleUsuario', { user: users.list[req.params.username]});
         },
     miPerfil : function(req, res) {
-        res.render('miPerfil', { user: users.list[0] });
+        res.render('miPerfil', { user: users.list[5] });
         },
     editarPerfil : function(req, res) {
         res.render('editarPerfil');

@@ -52,13 +52,13 @@ let users ={
         },
         {
             id: 5,
-            username: 'FranciscoRodriguez',
-            seguidores:300, 
+            username: 'MartinGutierrez',
+            seguidores:452, 
             publicaciones:1,
-            seguidos:100,
-            publicacion: '/images/fordFalcon.jpg',
+            seguidos:250,
+            publicacion: '/images/autoRojo.jpg',
             fotoPerfil: '/images/usuario1.jpg',
-            post_id: 0,
+            post_id: 5,
         }
     ],
 
