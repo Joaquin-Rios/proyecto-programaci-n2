@@ -11,7 +11,7 @@
                 <section id="posts" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
                     <% posts.forEach( post  => { %>
                         <article class="post uk-card-default uk-flex uk-flex-column">
-                            <div class="fotoPerfil "> <!--info-usuario uk-flex -->
+                            <div class="info-usuario uk-flex "> <!--fotoPerfil -->
                                     <div>
                                         <img src="<%= post.fotoPerfil %>" alt="">
                                     </div>
@@ -41,7 +41,7 @@
                                     
                                     <ul>
                                         <li>
-                                            <a href="/users/detalleUsuario/<%= comentario.user_id %>"><h3><%= comentario.user %></h3></a>
+                                            <a href="/users/detalleUsuario/<%= comentario.user_id %>"><h3><%= comentario.user %>:</h3></a>
                                             <p><%= comentario.contenido %></p>
                                         </li>
                                     </ul>
