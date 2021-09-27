@@ -84,7 +84,7 @@ let posts = {
             }
         }
     },
-    findById : function (id) {
+    /*findById : function (id) {
         for (let i = 0; i < posts.lista.length; i++) {
             let elem = posts.lista[i];
             if (elem.id == id) {
@@ -92,7 +92,7 @@ let posts = {
             }
         }
             
-    },
+    },*/
     
 }
 module.exports = posts;

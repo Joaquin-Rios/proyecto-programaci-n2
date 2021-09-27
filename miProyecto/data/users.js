@@ -62,30 +62,24 @@ let users ={
         }
     ],
 
-    findByUsername: function (username) {
-        for (let index = 0; index < users.list.length; index++) {
-            if (users.list[index].username == username) {
-                return users.list[index];
-            }
-        }
-    },
-    findByUser: function (Id) {
-        //let results = [];
+    findByUser: function (Id) {    
         for (let i = 0; i < users.list.length; i++){
             if(users.list[i].id == Id){
                 return users.list[i];
             }
         }
-        //return results;
     },
+
+    /*findByUsername: function (username) {
+        for (let index = 0; index < users.list.length; index++) {
+            if (users.list[index].username == username) {
+                return users.list[index];
+            }
+        }
+    },*/
     
-    //findUsername: function (id) {
-        //for(let i = 0; i < users.list.length; i++){
-            //if(users.list[i].id == id){
-                //return users.list[i]
-            //}
-       //}
-    //}
+    
+   
 }
 
 module.exports = users;

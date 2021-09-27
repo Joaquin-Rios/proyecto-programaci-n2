@@ -1,5 +1,4 @@
 const posts = require("../data/posts");
-//let users = require ('../data/users')
 
 
 let indexController = {
