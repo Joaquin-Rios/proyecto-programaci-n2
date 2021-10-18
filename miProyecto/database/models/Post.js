@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => { 
-    const alias = 'Post';
+    const alias = 'Posteos';
 
     const cols = {
         id: { 
@@ -7,12 +7,11 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        user_id: { 
+        usuario_id: { 
             type: dataTypes.INTEGER,
         },
-        contenido: { 
+        descripcion: { 
             type: dataTypes.STRING,
-
         },
         imagen: { 
             type: dataTypes.STRING,
@@ -21,14 +20,14 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const config = {
-        tableName: 'post',
-        timeStamps: false,
+        table_name: 'posteos',
+        timestamps: false,
         underscored: true,
     }
 
-    const Post = sequelize.define(alias, cols, config)
+    const Posteos = sequelize.define(alias, cols, config)
 
-    return Post;
+    return Posteos;
 }
 
 

@@ -1,6 +1,7 @@
-const posts = require("../data/posts");
-const comments = require("../data/comments");
+//const posts = require("../data/posts");
+//const comments = require("../data/comments");
 
+const db = require('../database/models');
 
 let postsController = {
     agregarPost : function(req, res) {
@@ -14,6 +15,16 @@ let postsController = {
         }
         res.render('detallePost', {post});
     },
+    guardado : function(req, res) {
+        db.Posteos.create({
+            descripcion : req.body.descripcion
+            
+        }) .then( post => {
+            res.redirect('/')
+        }) .catch( error => {
+            return res.render(error)
+        })
+    }
     
     
 

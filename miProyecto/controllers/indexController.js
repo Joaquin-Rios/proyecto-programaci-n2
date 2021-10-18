@@ -1,10 +1,11 @@
-const posts = require("../database/posts");
 
-const db = require('../models');
+
+const db = require('../database/models');
 
 let indexController = {
     index: function (req, res) {
-        db.Post.findAll()
+        db.Posteos.findAll()
+        
         .then((posts) => [
             res.render('index', {posts})
         ])

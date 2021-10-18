@@ -4,6 +4,8 @@ var router = express.Router();
 var postsController = require('../controllers/postController');
 /* GET home page. */
 router.get('/agregarPost', postsController.agregarPost);
+router.post('/agregarPost', postsController.guardado);
+
 router.get('/:id', postsController.detallePost);
 
 
