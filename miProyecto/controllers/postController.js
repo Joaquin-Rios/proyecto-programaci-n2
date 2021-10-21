@@ -7,12 +7,13 @@ let postsController = {
     agregarPost : function(req, res) {
         res.render('agregarPost');
     },
-    detallePost : function(req, res) {
-        const post = posts.find(req.params.id);
+    detallePost : async function(req, res) {
+        const post = await db.Posteos.findByPk(req.params.id);
         if (!post) {
             return res.render('error')
             
         }
+       // const comments = await db.Comentarios.findAll({where: {post_id:req.params.id} });
         res.render('detallePost', {post});
     },
     guardado : function(req, res) {
