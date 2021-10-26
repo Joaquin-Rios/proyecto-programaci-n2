@@ -11,10 +11,9 @@ let postsController = {
         const post = await db.Posteos.findByPk(req.params.id);
         if (!post) {
             return res.render('error')
-            
         }
-       // const comments = await db.Comentarios.findAll({where: {post_id:req.params.id} });
-        res.render('detallePost', {post});
+       const comments = await db.Comentarios.findAll({where: {posteo_id:req.params.id} });
+        res.render('detallePost', {post, comments});
     },
     guardado : function(req, res) {
         db.Posteos.create({

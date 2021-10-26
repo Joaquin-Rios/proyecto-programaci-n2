@@ -15,11 +15,11 @@ let indexController = {
     },
     login: async function (req, res) {
             if (req.method == 'POST') {
-              const user = await db.Usuarios.findOne({ where: {username: req.body.username}});
+              const user = await db.Usuarios.findOne({ where: {nombre: req.body.email}});
               if (!user) {
                 res.send('NO EXISTE EL USUARIO')
               }
-              if (bcrypt.compareSync(req.body.password, user.contraseña)) {
+              if (bcrypt.compareSync(req.body.contraseña, user.contraseña)) {
                 // Add user to session
                 res.redirect('/');
               } else {
