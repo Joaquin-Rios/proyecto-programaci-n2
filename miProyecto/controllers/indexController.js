@@ -1,10 +1,9 @@
-
-
 const db = require('../database/models');
+const op = db.Sequelize.Op;
 
 let indexController = {
     index: function (req, res) {
-        db.Posteos.findAll()
+        db.Posteos.findAll({limit: 6})
         
         .then((posts) => [
             res.render('index', {posts})
@@ -37,9 +36,18 @@ let indexController = {
     fotoPerfil : function(req, res) {
                 res.render('index', {posts: posts.lista });
             },
+    buscador: async function(req, res, next){
+          const posts = await db.Posteos.findAll({ where : { 
+            [op.or] : [
+              {descripcion : {[op.like]: "%"+req.query.criteria+"%"} },
+              {imagen : {[op.like]: "%"+req.query.criteria+"%"} },
+            ]
+            }})
+          
+          
+          res.render('buscador', { posts, criteria: req.query.criteria });
+    },
 }
-
-
 
 
 module.exports = indexController;

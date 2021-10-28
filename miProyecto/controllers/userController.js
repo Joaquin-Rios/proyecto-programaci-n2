@@ -3,6 +3,7 @@ let posts = require ('../data/posts')
 
 const db = require('../database/models');
 
+
 let userController = {
     detalleUsuario : async function(req, res) {
         
