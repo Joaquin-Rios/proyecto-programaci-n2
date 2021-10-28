@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
+const multer = require('multer');
+const upload = multer({ dest: 'public/images/'});
 
 var postsController = require('../controllers/postController');
 /* GET home page. */
 router.get('/agregarPost', postsController.agregarPost);
-router.post('/agregarPost', postsController.guardado);
+router.post('/agregarPost', upload.single('image'), postsController.guardado);
 
 router.get('/:id', postsController.detallePost);
 

@@ -15,6 +15,7 @@ let postsController = {
        const comments = await db.Comentarios.findAll({where: {posteo_id:req.params.id} });
         res.render('detallePost', {post, comments});
     },
+
     guardado : function(req, res) {
         db.Posteos.create({
             descripcion : req.body.descripcion
@@ -26,9 +27,6 @@ let postsController = {
         })
     }
     
-    
-
-
 }
 
 module.exports = postsController;
