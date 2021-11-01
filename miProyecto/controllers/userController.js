@@ -7,11 +7,13 @@ const db = require('../database/models');
 let userController = {
     detalleUsuario : async function(req, res) {
         
-        const user = await db.User.findByPk(req.params.username);
-        const posts = await db.Post.findAll({where: {user_id: req.params.username}});
+        const user = await db.User.findByPk(req.params.id, {
+            include: [{association: 'posteos'}]
+        });
+        //const posts = await db.Post.findAll({where: {user_id: req.params.username}});
       
         //userId = usuarios.findUsername(req.params.id)
-        res.render('detalleUsuario', { user: users.list[req.params.username]});
+        res.render('detalleUsuario', { user });
          
     },    
     miPerfil : function(req, res) {
