@@ -27,6 +27,13 @@ module.exports = (sequelize, dataTypes) => {
 
     const Posteos = sequelize.define(alias, cols, config)
 
+    Posteos.associate = function(models){
+        Posteos.hasMany(models.Comentarios, {
+            as: 'comments',
+            foreignKey: 'posteo_id'
+        });
+    };
+
     return Posteos;
 }
 

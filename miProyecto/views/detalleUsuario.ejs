@@ -19,24 +19,24 @@
                             </div>
                             <div>
                                 <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
-                                    <li><%= //user.publicaciones%> post</li>
-                                    <li><%= //user.seguidores%> seguidores</li>
-                                    <li><%= //user.seguidos%> seguidos</li>
+                                    <li><%= user.cantPublicaciones%> post</li>
+                                    <li><%= user.seguidores%> seguidores</li>
+                                    <li><%= user.seguidos%> seguidos</li>
                                 </ul>
                             </div>
                         </div>
                 </section>
                 <section class="muro uk-flex uk-flex-middle uk-flex-center">
-                        
-                        <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
+                        <% user.posteos.forEach(post => { %>
+                            <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
                             <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                                <a href="/posts/<%= user.post_id%>" class="link-detalle">
-                                    <img src="<%= user.publicacion%>" alt="foto de perfil" class="foto-perfil">                                   
+                                <a href="/posts/<%= post.id%>" class="link-detalle">
+                                    <img src="<%= post.imagen%>" alt="foto de perfil" class="foto-perfil">                                   
                                 </a>
                                 <p class="uk-text-center">Última publicación</p>
                             </div>
                         </div>
-
+                      <% }); %>
                 </section>
                 </div>
             </div>

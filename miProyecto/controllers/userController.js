@@ -2,17 +2,15 @@ let users = require ('../data/users')
 let posts = require ('../data/posts')
 
 const db = require('../database/models');
+const op = db.Sequelize.Op;
 
 
 let userController = {
     detalleUsuario : async function(req, res) {
         
-        const user = await db.User.findByPk(req.params.id, {
+        const user = await db.Usuarios.findByPk(req.params.id, {
             include: [{association: 'posteos'}]
         });
-        //const posts = await db.Post.findAll({where: {user_id: req.params.username}});
-      
-        //userId = usuarios.findUsername(req.params.id)
         res.render('detalleUsuario', { user });
          
     },    

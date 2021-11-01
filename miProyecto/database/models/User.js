@@ -22,6 +22,15 @@ module.exports = (sequelize, dataTypes) => {
         fotoPerfil:{
             type: dataTypes.STRING
         },
+        cantPublicaciones:{
+            type: dataTypes.INTEGER
+        },
+        seguidores:{
+            type: dataTypes.INTEGER
+        },
+        seguidos:{
+            type: dataTypes.INTEGER
+        }
     
     }
 
