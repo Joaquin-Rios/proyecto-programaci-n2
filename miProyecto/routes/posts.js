@@ -10,6 +10,11 @@ router.post('/agregarPost', upload.single('image'), postsController.guardado);
 
 router.get('/:id', postsController.detallePost);
 
+router.get('/:id/editar', postsController.editarPost);
+router.post('/:id/editar', postsController.actualizarPost);
+
+router.post('/:id/eliminar', postsController.eliminarPost);
+
 
 //router.get('/comentariosPost/:user', postsController.comentariosPost);
 //router.get('/login', indexController.login);

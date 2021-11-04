@@ -13,7 +13,7 @@ let userController = {
         });
         res.render('detalleUsuario', { user });
          
-    },    
+    }, 
     miPerfil : function(req, res) {
         res.render('miPerfil', { user: users.list[5] });
         },

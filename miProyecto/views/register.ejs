@@ -8,53 +8,31 @@
         <main>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
-                    <form>
-                        <div class="text">
-                            <label for="name">Usuario</label>
+                   
+                    <form method="POST">
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email address</label>
+                          <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+                          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                         </div>
-                        <div class="box">
-                            <input type="text" id="nombre" name="nombre" value="" placeholder="Introduce un nombre de perfil" >
+                        <div class="mb-3">
+                          <label for="username" class="form-label">Nombre de usuario</label>
+                          <input type="text" class="form-control" name="username" id="username" required>
                         </div>
-        
-                        <div class="text">
-                            <label for="email">¿Cual es tu correo electronico?</label>
+                        <div class="mb-3">
+                          <label for="username" class="form-label">Nombre</label>
+                          <input type="text" class="form-control" name="name" id="name" required>
                         </div>
-                        <div class="box">
-                            <input type="email" id="mail" name="mail" value="" placeholder="Introduce su correo electronico" >
+                        <div class="mb-3">
+                          <label for="username" class="form-label">Apellido</label>
+                          <input type="text" class="form-control" name="surname" id="surname" required>
                         </div>
-        
-                        <div class="text">
-                            <label for="password">Crea una contraseña</label>
+                        <div class="mb-3">
+                          <label for="password" class="form-label">Password</label>
+                          <input type="password" class="form-control" name="password" id="password" required>
                         </div>
-                        <div class="box">
-                            <input type="password" id="contraseña" name="contraseña" value="" placeholder="Crea una contraseña" >
-                        </div>
-        
-                        <div class="text">
-                            <label for="date">¿Cual es tu fecha de nacimiento?</label>
-                        </div>
-                        <div class="box">
-                            <input type="date"  id="date" name="date" id="nombre" placeholder="" >
-                        </div>
-        
-                        <div class="text">
-                            <label for="gender">¿Cual es tu sexo?</label>
-                        </div>
-                        <div class="box">
-                            <input type="radio" id="genero" name="genero" value="" ><label>Hombre</label>
-                            <input type="radio" id="genero" name="genero" value="" ><label>Mujer</label>
-                            <input type="radio" id="genero" name="genero" value="" ><label>Otro</label>
-                        </div>
-        
-                        <div class="verificacion">
-                            <input type="checkbox" id="verificacion" name="verificacion" value=""> <label>Compartirt mis datos de registro con los creadores de CarsWorld para fines de marketing</label>
-                        </div>
-
-                        <div class="boton">
-                            <button  type="submit" id="boton">Registrate</button>
-                        </div> 
-                    
-                    </form> 
+                        <button type="submit" class="btn btn-primary">Registrarme</button>
+                      </form>
                 </div>
             </div>
         </main>

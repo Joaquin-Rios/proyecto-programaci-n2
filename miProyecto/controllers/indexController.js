@@ -3,7 +3,7 @@ const op = db.Sequelize.Op;
 
 let indexController = {
     index: function (req, res) {
-        db.Posteos.findAll({limit: 6})
+        db.Posteos.findAll()
         
         .then((posts) => [
             res.render('index', {posts})
@@ -11,6 +11,18 @@ let indexController = {
         .catch((error) => {
             res.send(error)
         })  
+    },
+    registro: function (req,res) {
+      res.render('register');
+    },
+    guardadoRegistro: function(req, res) {
+       db.Posteos.create({
+         //body     
+       }) .then( post => {
+          res.redirect('/login')
+       }) .catch( error => {
+          return res.render(error)
+       })
     },
     login: async function (req, res) {
             if (req.method == 'POST') {
@@ -30,9 +42,7 @@ let indexController = {
              
         // res.render('login');            
             },
-    register: function (req, res) {
-                res.render('register');            
-            },
+   
     fotoPerfil : function(req, res) {
                 res.render('index', {posts: posts.lista });
             },
