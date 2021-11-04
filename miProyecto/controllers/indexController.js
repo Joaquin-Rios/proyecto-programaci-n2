@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const op = db.Sequelize.Op;
+const bcrypt = require('bcryptjs');
 
 let indexController = {
     index: function (req, res) {
@@ -15,34 +16,31 @@ let indexController = {
     registro: function (req,res) {
       res.render('register');
     },
-    guardadoRegistro: function(req, res) {
-       db.Posteos.create({
-         //body     
-       }) .then( post => {
-          res.redirect('/login')
+    guardadoRegistro: async function(req, res) {
+       req.body.contraseña = bcrypt.hashSync(req.body.contraseña, 10);
+       
+       db.Posteos.create(req.body) 
+       .then( post => {
+          res.redirect('login')
        }) .catch( error => {
           return res.render(error)
        })
     },
     login: async function (req, res) {
             if (req.method == 'POST') {
-              const user = await db.Usuarios.findOne({ where: {nombre: req.body.email}});
+              const user = await db.Usuarios.findOne({ where: {username: req.body.username}});
               if (!user) {
                 res.send('NO EXISTE EL USUARIO')
               }
               if (bcrypt.compareSync(req.body.contraseña, user.contraseña)) {
-                // Add user to session
-                res.redirect('/');
+                res.redirect('/');                
               } else {
                 res.send('LA CONSTRASEÑA ES INCORRECTA')
               }
             } else {
               res.render('login');
-            }
-             
-        // res.render('login');            
-            },
-   
+            }            
+    },
     fotoPerfil : function(req, res) {
                 res.render('index', {posts: posts.lista });
             },

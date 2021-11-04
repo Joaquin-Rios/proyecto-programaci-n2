@@ -7,9 +7,9 @@ router.get('/', indexController.index);
 
 
 router.get('/registro', indexController.registro);
-router.get('/registro', indexController.guardadoRegistro);
+router.post('/registro', indexController.guardadoRegistro);
 
-router.get('/login', indexController.login);
+router.all('/login', indexController.login);
 
 
 router.get('/fotoPerfil', indexController.fotoPerfil);

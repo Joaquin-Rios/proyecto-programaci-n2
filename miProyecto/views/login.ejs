@@ -8,19 +8,17 @@
         <main>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
-                    <form action="" method="POST">
+                    <form  method="POST">
                         <div class="text">
-                            <label >Correo electrónico o nombre de usuario</label>
+                            <label for="username" class="form-label">Nombre de usuario</label>
+                            <input type="text" name="username" id="username">
                         </div>
-                        <div class="box">
-                            <input type="email" id="mail" name="mail" value="" placeholder="Correo electrónico o nombre de usuario" >
-                        </div>
+                      
                         <div class="text">
-                            <label>Contraseña</label>
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" name="contraseña" id="contraseña">
                         </div>
-                        <div class="box">
-                            <input type="password" id="contraseña"name="contraseña" value="" placeholder="Contraseña" >
-                        </div>
+
                         <div class="boton">
                             <button type="submit">Iniciar Sesion</button>
                         </div>
