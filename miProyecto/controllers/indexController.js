@@ -51,8 +51,6 @@ let indexController = {
               {imagen : {[op.like]: "%"+req.query.criteria+"%"} },
             ]
             }})
-          
-          
           res.render('buscador', { posts, criteria: req.query.criteria });
     },
 }
