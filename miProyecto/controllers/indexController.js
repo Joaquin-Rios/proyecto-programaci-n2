@@ -16,23 +16,27 @@ let indexController = {
     registro: function (req,res) {
       res.render('register');
     },
-    guardadoRegistro: async function(req, res) {
-       req.body.contraseña = bcrypt.hashSync(req.body.contraseña, 10);
-       
-       db.Posteos.create(req.body) 
-       .then( post => {
-          res.redirect('login')
+    guardadoRegistro: function(req, res) {
+       db.Usuarios.create({
+         username: req.body.username,
+         nombre: req.body.nombre,
+         apellido: req.body.apellido,
+         email: req.body.email,
+         contrasenia: bcrypt.hashSync(req.body.contrasenia, 10)
+       }) 
+       .then( function() {
+          return res.redirect('/login')
        }) .catch( error => {
-          return res.render(error)
+          return res.send(error)
        })
     },
-    login: async function (req, res) {
+    login: async function (req, res, next) {
             if (req.method == 'POST') {
               const user = await db.Usuarios.findOne({ where: {username: req.body.username}});
               if (!user) {
                 res.send('NO EXISTE EL USUARIO')
               }
-              if (bcrypt.compareSync(req.body.contraseña, user.contraseña)) {
+              if (bcrypt.compareSync(req.body.contrasenia,user.contrasenia)){
                 res.redirect('/');                
               } else {
                 res.send('LA CONSTRASEÑA ES INCORRECTA')

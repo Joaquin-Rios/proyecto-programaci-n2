@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
         email: {
             type: dataTypes.STRING
         },
-        contraseña: {
+        contrasenia: {
             type: dataTypes.STRING
         },
         fotoPerfil:{
@@ -39,8 +39,8 @@ module.exports = (sequelize, dataTypes) => {
 
     const config = {
         tableName: 'users',
-        timeStamps: false,
-        underscored: true,
+        timestamps: false,
+        underscored: false,
     }
 
     const Users = sequelize.define(alias, cols, config)
