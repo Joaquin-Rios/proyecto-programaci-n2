@@ -15,6 +15,17 @@ let postsController = {
        const comments = await db.Comentarios.findAll({where: {posteo_id:req.params.id} });
         res.render('detallePost', {post, comments});
     },
+    comentario: function(req, res) {
+        db.Comentarios.create({
+            ...req.body,
+            posteo_id: req.params.id,
+            usuario_id: '2',
+        }) .then( post => {
+            res.redirect('/posts/'+req.params.id)
+        }) .catch( error => {
+            return res.send(error)
+        })
+    },
     guardado : function(req, res) {
         db.Posteos.create({
             descripcion : req.body.descripcion      

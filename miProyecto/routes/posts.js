@@ -9,6 +9,8 @@ router.get('/agregarPost', postsController.agregarPost);
 router.post('/agregarPost', upload.single('image'), postsController.guardado);
 
 router.get('/:id', postsController.detallePost);
+router.post('/:id', postsController.comentario);
+
 
 router.get('/:id/editar', postsController.editarPost);
 router.post('/:id/editar', postsController.actualizarPost);
