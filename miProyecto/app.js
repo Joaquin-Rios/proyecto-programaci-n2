@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-/*
+
 //Middleware de cookies
 app.use(async (req, res, next) => {
   if (req.cookies.user !== undefined && req.session.user === undefined) {
@@ -55,7 +55,7 @@ app.use(async (req, res, next) => {
   }
   next();
 });
-*/
+
 
 
 

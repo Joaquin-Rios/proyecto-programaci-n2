@@ -16,10 +16,13 @@ let postsController = {
         res.render('detallePost', {post, comments});
     },
     comentario: function(req, res) {
+        if (!req.session.user) {
+            res.redirect('/posts/'+req.params.id);
+          }
         db.Comentarios.create({
             ...req.body,
             posteo_id: req.params.id,
-            usuario_id: '2',
+            usuario_id : req.session.user.id
         }) .then( post => {
             res.redirect('/posts/'+req.params.id)
         }) .catch( error => {
@@ -28,7 +31,8 @@ let postsController = {
     },
     guardado : function(req, res) {
         db.Posteos.create({
-            descripcion : req.body.descripcion      
+            descripcion : req.body.descripcion,  
+            usuario_id : req.session.user.id   
         }) .then( post => {
             res.redirect('/')
         }) .catch( error => {

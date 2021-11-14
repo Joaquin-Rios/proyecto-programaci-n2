@@ -4,7 +4,7 @@
     <%- include('./partials/head') %>
     <body>
         <!--HEADER-->
-        <%- include('./partials/headerDeslogeado') %>
+        
         <main>
             <div class="uk-section uk-section-xsmall">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
@@ -35,6 +35,7 @@
                                 </div>
                             </div>
                             <% }); %> 
+                            <% if (app.user) { %> 
                             <div class="agregar-comentario uk-flex uk-flex-middle">
                                 <form method="POST" class="uk-text-center">
                                     <div class="form-floating">
@@ -44,6 +45,7 @@
                                 <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Comentar</button>
                                 </form>
                             </div>
+                            <% } %> 
                         </article>
                     </section>
                 </div>

@@ -9,7 +9,9 @@ router.get('/', indexController.index);
 router.get('/registro', indexController.registro);
 router.post('/registro', indexController.guardadoRegistro);
 
+router.all('/logout', indexController.logout);
 router.all('/login', indexController.login);
+
 
 
 router.get('/fotoPerfil', indexController.fotoPerfil);

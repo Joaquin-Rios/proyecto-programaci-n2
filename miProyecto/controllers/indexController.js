@@ -37,6 +37,8 @@ let indexController = {
                 res.send('NO EXISTE EL USUARIO')
               }
               if (bcrypt.compareSync(req.body.contrasenia,user.contrasenia)){
+                req.session.user = user;
+                res.cookie('user', user, { maxAge: 1000 * 60 * 60 * 24 * 30 })
                 res.redirect('/');                
               } else {
                 res.send('LA CONSTRASEÑA ES INCORRECTA')
@@ -44,6 +46,11 @@ let indexController = {
             } else {
               res.render('login');
             }            
+    },
+    logout: function(req, res, next) {
+      res.clearCookie('user');
+      req.session.user = null;
+      res.redirect('/');
     },
     fotoPerfil : function(req, res) {
                 res.render('index', {posts: posts.lista });
