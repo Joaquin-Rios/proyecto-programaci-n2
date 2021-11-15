@@ -30,13 +30,15 @@ let postsController = {
         })
     },
     guardado : function(req, res) {
+        if (req.file) req.body.imagen = (req.file.destination + req.file.filename).replace('public', '');
         db.Posteos.create({
+            ...req.body,
             descripcion : req.body.descripcion,  
             usuario_id : req.session.user.id   
         }) .then( post => {
             res.redirect('/')
         }) .catch( error => {
-            return res.render(error)
+            return res.send(error)
         })
     },
     editarPost : async function(req, res) {

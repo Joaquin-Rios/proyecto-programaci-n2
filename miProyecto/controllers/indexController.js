@@ -56,12 +56,17 @@ let indexController = {
                 res.render('index', {posts: posts.lista });
             },
     buscador: async function(req, res, next){
-          const posts = await db.Posteos.findAll({ where : { 
+          const posts = await db.Posteos.findAll({ 
+            where : { 
             [op.or] : [
               {descripcion : {[op.like]: "%"+req.query.criteria+"%"} },
               {imagen : {[op.like]: "%"+req.query.criteria+"%"} },
-            ]
-            }})
+            ]},
+            order:[
+              ['imagen','desc']
+             ]
+          })
+           
           res.render('buscador', { posts, criteria: req.query.criteria });
     },
 }

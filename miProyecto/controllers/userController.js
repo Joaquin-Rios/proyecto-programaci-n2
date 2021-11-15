@@ -14,13 +14,31 @@ let userController = {
         res.render('detalleUsuario', { user });
          
     }, 
-    miPerfil : function(req, res) {
-        res.render('miPerfil', { user: users.list[5] });
+    miPerfil : async function(req, res) {
+        if (req.session.user) {
+            let user = await db.Usuarios.findOne({
+                where: {username: req.params.username}
+            })
+            res.render('miPerfil', {user});
+        }else{
+            res.redirect('/')
+        }
+        
         },
     editarPerfil : function(req, res) {
         res.render('editarPerfil');
         },
-   
+    guardarPerfil : function (req, res){
+        if (req.file) req.body.imagen = (req.file.destination + req.file.filename).replace('public', '');
+        db.Usuarios.create({
+            ...req.body,
+            usuario_id : req.session.user.id   
+        }) .then( post => {
+            res.redirect('/users/miPerfil/'+req.params.id);
+        }) .catch( error => {
+            return res.send(error)
+        })
+    }
     
 
 }

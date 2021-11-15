@@ -6,7 +6,7 @@ const upload = multer({ dest: 'public/images/'});
 var postsController = require('../controllers/postController');
 /* GET home page. */
 router.get('/agregarPost', postsController.agregarPost);
-router.post('/agregarPost', upload.single('image'), postsController.guardado);
+router.post('/agregarPost', upload.single('imagen'), postsController.guardado);
 
 router.get('/:id', postsController.detallePost);
 router.post('/:id', postsController.comentario);
