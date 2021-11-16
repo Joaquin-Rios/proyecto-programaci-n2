@@ -32,9 +32,9 @@ let userController = {
         if (req.file) req.body.imagen = (req.file.destination + req.file.filename).replace('public', '');
         db.Usuarios.create({
             ...req.body,
-            usuario_id : req.session.user.id   
-        }) .then( post => {
-            res.redirect('/users/miPerfil/'+req.params.id);
+            usuario_id : req.session.user.id,
+        }) .then( user => {
+            res.redirect('/users/miPerfil/'+req.session.user.id);
         }) .catch( error => {
             return res.send(error)
         })

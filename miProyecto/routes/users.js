@@ -10,7 +10,7 @@ router.get('/detalleUsuario/:id', usersController.detalleUsuario);
 
 router.get('/miPerfil/:username', usersController.miPerfil);
 
-router.get('/editarPerfil', usersController.editarPerfil);
-router.post('/editarPerfil', upload.single('imagen'), usersController.guardarPerfil);
+router.get('/editarPerfil/', usersController.editarPerfil);
+router.post('/editarPerfil/', upload.single('imagen'), usersController.guardarPerfil);
 
 module.exports = router;

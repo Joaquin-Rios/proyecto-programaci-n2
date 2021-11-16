@@ -8,20 +8,22 @@
         <main>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
+                    
+
                     <form method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <label for="image" class="form-label">Seleccionar nueva imagen de perfil</label>
+                            <label for="image" class="form-label">Seleccionar foto de perfil</label>
                             <input type="file" class="form-control" id="imagen" name="imagen">
                         </div>
-                        
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                        <div class="text">
-                            <label for="name"> Cambiar nombre de usuario actual</label>
+                        <div class="mb-3">
+                              <div class="text">
+                                <label for="name">Cambiar nombre de usuario actual</label>
+                                <input type="text" id="username" name="username" value="" placeholder="Nuevo nombre de usuario" >
+                              </div>
                         </div>
-                        <div class="box">
-                            <input type="text" id="nombre" name="nombre" value="" placeholder="Introduce un nuevo nombre de usuario" >
-                        </div>
-        
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    </form>
+                        <!--
                         <div class="text">
                             <label for="text">Sitio Web</label>
                         </div>
@@ -54,12 +56,8 @@
                             <input type="radio" id="genero" name="genero" value="" ><label>Mujer</label>
                             <input type="radio" id="genero" name="genero" value="" ><label>Otro</label>
                         </div>
-
-                        <div class="boton">
-                            <button  type="submit" id="boton">Guardar cambios</button>
-                        </div> 
-                    
-                    </form> 
+                    -->
+                        
                 </div>
             </div>
         </main>
