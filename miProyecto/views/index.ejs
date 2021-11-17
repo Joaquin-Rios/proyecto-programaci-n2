@@ -12,9 +12,9 @@
                         <article class="post uk-card-default uk-flex uk-flex-column">
                             <div class="info-usuario uk-flex "> <!--fotoPerfil -->
                                     <div>
-                                        <img src="<%= post.fotoPerfil %>" alt="">
+                                        <img src="<%= post.creador.fotoPerfil %>" alt="">
                                     </div>
-                                <h4><a href="/users/detalleUsuario/<%=post.usuario_id %>"><%= post.usuario_id %></a></h4>
+                                <h4><a href="/users/detalleUsuario/<%=post.creador.id %>"><%= post.creador.username %></a></h4>
                             </div>
                             <div class="post-body uk-flex uk-flex-center">
                                 <a href="/posts/<%= post.id %>">
@@ -29,13 +29,16 @@
                                     </li>
                                 </ul>
                                 <div class="post-pie uk-flex">
-                                    <h5 class="uk-width-1-6"><a href="/users/detalleUsuario/<%= post.usuario_id %>"><%= post.usuario_id %></a></h5>
+                                    <h5 class="uk-width-1-6"><a href="/users/detalleUsuario/<%= post.creador.id %>"><%= post.creador.nombre %></a></h5>
                                     <p class="uk-width-5-6"><%= post.descripcion %></p>
                                 </div>
                             </div>
 
                                 <h6>Comentarios</h6>
-                          
+                                <!--      <% //post.comments.forEach(comment => { %>
+                                    <a href="/users/detalleUsuario/<%= //comment.creador.id %>"><%= //comment.creador.nombre %> <%= //comment.creador.apellido %></a> - <%= //comment.comentario %><br>
+                                  <% //}) %>
+                                -->
                                 <a href="/posts/<%= post.id %>">Ver más...</a>
                             
                         </article>

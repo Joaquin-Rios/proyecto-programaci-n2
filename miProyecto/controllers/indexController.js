@@ -4,7 +4,13 @@ const bcrypt = require('bcryptjs');
 
 let indexController = {
     index: function (req, res) {
-        db.Posteos.findAll()
+        db.Posteos.findAll({
+          include: [
+            {association: 'creador'},
+           // { association: 'comments', include: [{association: 'creador'}] }
+
+          ]
+        })
         
         .then((posts) => [
             res.render('index', {posts})

@@ -34,7 +34,7 @@ let userController = {
             ...req.body,
             usuario_id : req.session.user.id,
         }) .then( user => {
-            res.redirect('/users/miPerfil/'+req.session.user.id);
+            res.redirect('/users/miPerfil/'+req.session.user.username); 
         }) .catch( error => {
             return res.send(error)
         })

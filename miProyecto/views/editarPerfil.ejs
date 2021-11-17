@@ -10,7 +10,7 @@
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                     
 
-                    <form method="POST" enctype="multipart/form-data">
+                    <form method="POST" action="/users/miPerfil/<%= app.user.username %>" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="image" class="form-label">Seleccionar foto de perfil</label>
                             <input type="file" class="form-control" id="imagen" name="imagen">
