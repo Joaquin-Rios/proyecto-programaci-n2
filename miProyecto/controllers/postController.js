@@ -8,12 +8,17 @@ let postsController = {
         res.render('agregarPost');
     },
     detallePost : async function(req, res) {
-        const post = await db.Posteos.findByPk(req.params.id);
+        const post = await db.Posteos.findByPk(req.params.id, {
+            include: [
+                {association: 'creador'},
+                {association: 'comments', include: [{association: 'creador'}],
+            }]
+        });
         if (!post) {
             return res.render('error')
         }
-       const comments = await db.Comentarios.findAll({where: {posteo_id:req.params.id} });
-        res.render('detallePost', {post, comments});
+        res.render('detallePost', {post});
+        
     },
     comentario: function(req, res) {
         if (!req.session.user) {
