@@ -35,10 +35,10 @@
                             </div>
 
                                 <h6>Comentarios</h6>
-                                <!--      <% //post.comments.forEach(comment => { %>
-                                    <a href="/users/detalleUsuario/<%= //comment.creador.id %>"><%= //comment.creador.nombre %> <%= //comment.creador.apellido %></a> - <%= //comment.comentario %><br>
-                                  <% //}) %>
-                                -->
+                                      <% post.comments.forEach(comment => { %>
+                                    <a href="/users/detalleUsuario/<%= comment.creador.id %>"><%= comment.creador.nombre %> <%= comment.creador.apellido %></a> - <%= comment.comentario %><br>
+                                  <% }) %>
+                                
                                 <a href="/posts/<%= post.id %>">Ver más...</a>
                             
                         </article>

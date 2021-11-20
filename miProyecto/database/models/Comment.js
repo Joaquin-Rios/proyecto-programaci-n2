@@ -31,14 +31,15 @@ module.exports = (sequelize, dataTypes) => {
     const Comentarios = sequelize.define(alias, cols, config)
 
     Comentarios.associate = function(models){
-        Comentarios.belongsTo(models.Usuarios, {
-            as: 'creador',
-            foreignKey: 'usuario_id'
-        });
         Comentarios.belongsTo(models.Posteos, {
             as: 'posteo',
             foreignKey: 'posteo_id'
         });
+        Comentarios.belongsTo(models.Usuarios, {
+            as: 'creador',
+            foreignKey: 'usuario_id'
+        });
+        
     }
     return Comentarios;
 }
