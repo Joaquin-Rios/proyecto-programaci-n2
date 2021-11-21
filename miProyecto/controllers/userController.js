@@ -10,6 +10,7 @@ let userController = {
         
         const user = await db.Usuarios.findByPk(req.params.id, {
             include: [{association: 'posteos'}]
+            
         });
         res.render('detalleUsuario', { user });
          
@@ -39,8 +40,35 @@ let userController = {
         }) .catch( error => {
             return res.send(error)
         })
-    }
-    
+    },
+    /*
+    follow: function(req, res) {
+        if (!req.session.user) {
+          res.redirect('/users/'+req.params.id);
+        }
+        db.Follow.create({
+          follower_id: req.session.user.id,
+          following_id: req.params.id 
+        }).then(follow => {
+          res.redirect('/users/'+req.params.id);
+        }).catch(error => {
+          return res.send(error);
+        })
+      },
+      unfollow: function(req, res) {
+        if (!req.session.user) {
+          res.redirect('/users/'+req.params.id);
+        }
+        db.Follow.destroy(
+          { where: { follower_id: req.session.user.id, following_id: req.params.id }
+        })
+        .then(() => {
+          res.redirect('/users/'+req.params.id);
+        }).catch(error => {
+          return res.render(error);
+        })
+      },
+    */
 
 }
 

@@ -6,13 +6,19 @@
         <!--HEADER-->
         
         <main>
+          <% if (locals.errors) { %>
+            <% errors.forEach(error => { %>
+              <div class="alert alert-danger" role="alert">
+                <%= error %> 
+              </div>
+            <% }) %>
+          <% } %>
             <div class="uk-section uk-section-small">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
-                   
                     <form method="POST">
                         <div class="mb-3">
                           <label for="email" class="form-label">Email address</label>
-                          <input type="email" class="form-control" name="email" id="email" >
+                          <input type="email" class="form-control" name="email" id="email" required>
                           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                         </div>
                         <div class="mb-3">

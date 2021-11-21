@@ -12,10 +12,19 @@
                             <img src="<%= user.fotoPerfil %>" alt="foto de perfil" class="foto-perfil">
                         </div>
                         <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
-                            <div class="uk-flex uk-flex-middle">
-                                <h3 class="uk-margin-remove"> <%= user.username %> </h3>
-                                <button class="uk-button uk-button-small uk-button-primary uk-margin-left">Seguir</button>
-                            </div>
+                            <!--
+                            <% //if (user.id != app.user.id) { %>
+                                <div class="float-end">
+                                    <h3 class="uk-margin-remove"> <%= //user.username %> </h3>
+                                  <% //if (user.follower.find(follow => follow.follower_id == app.user.id)) { %>
+                                    <a href="/users/detalleUsuario/<%= //user.id %>/unfollow" class="btn btn-danger">Unfollow</a>
+                                  <%// } else { %>
+                                    <a href="/users/detalleUsuario/<%= //user.id %>/follow" class="btn btn-primary">Follow</a>
+                                  <% } %>
+                                </div>
+                            <% } %>
+                            -->
+                            <h3 class="uk-margin-remove"> <%= user.username %> </h3>
                             <div>
                                 <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
                                     <li><%= user.cantPublicaciones%> post</li>

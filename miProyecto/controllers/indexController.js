@@ -2,6 +2,24 @@ const db = require('../database/models');
 const op = db.Sequelize.Op;
 const bcrypt = require('bcryptjs');
 
+
+const validateUser = function (req) {
+  const errors = [];
+  if (!req.body.email) {
+    errors.push('EL EMAIL ES REQUERIDO');
+  }
+  if (req.body.email == req.params.email) {
+    errors.push('EL EMAIL YA EXISTE');
+  }
+  if (req.body.contrasenia.length < 5) {
+    errors.push('LA CONSTRASEÑA ES INSEGURA');
+  }
+  if (!req.body.username) {
+    errors.push('EL USERNAME ES REQUERIDO');
+  }
+  return errors;
+}
+
 let indexController = {
     index: function (req, res) {
         db.Posteos.findAll({
@@ -23,6 +41,10 @@ let indexController = {
       res.render('register');
     },
     guardadoRegistro: function(req, res) {
+      const errors = validateUser(req);
+      if (errors.length > 0) {
+        return res.render('register', { errors });
+      }
        db.Usuarios.create({
          username: req.body.username,
          nombre: req.body.nombre,
@@ -68,9 +90,8 @@ let indexController = {
               {descripcion : {[op.like]: "%"+req.query.criteria+"%"} },
               {imagen : {[op.like]: "%"+req.query.criteria+"%"} },
             ]},
-            order:[
-              ['imagen','desc']
-             ]
+            include: [{association: 'creador'}],
+            order:[['imagen','desc']]
           })
            
           res.render('buscador', { posts, criteria: req.query.criteria });
