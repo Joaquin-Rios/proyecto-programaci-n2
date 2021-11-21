@@ -17,8 +17,9 @@ let userController = {
     miPerfil : async function(req, res) {
         if (req.session.user) {
             let user = await db.Usuarios.findOne({
-                where: {username: req.params.username}
-            })
+                where: {username: req.params.username},
+                include: [{association: 'posteos'}]  
+            });
             res.render('miPerfil', {user});
         }else{
             res.redirect('/')
