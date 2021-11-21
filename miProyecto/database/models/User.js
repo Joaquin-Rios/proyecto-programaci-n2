@@ -25,6 +25,9 @@ module.exports = (sequelize, dataTypes) => {
         fotoPerfil:{
             type: dataTypes.STRING
         },
+        fechaNacimiento:{
+            type: dataTypes.DATE
+        },
         cantPublicaciones:{
             type: dataTypes.INTEGER
         },

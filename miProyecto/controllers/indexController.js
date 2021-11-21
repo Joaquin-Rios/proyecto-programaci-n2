@@ -7,7 +7,7 @@ let indexController = {
         db.Posteos.findAll({
           include: [
             {association: 'creador'},
-            { association: 'comments', include: [{association: 'creador'}] }
+            {association: 'comments', include: [{association: 'creador'}] }
 
           ]
         })
