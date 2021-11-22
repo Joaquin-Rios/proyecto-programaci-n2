@@ -9,7 +9,7 @@ let userController = {
     detalleUsuario : async function(req, res) {
         
         const user = await db.Usuarios.findByPk(req.params.id, {
-            include: [{association: 'posteos'}]
+          include: [{association: 'posteos'}, {association: 'followers'},{association: 'following'} ]
             
         });
         res.render('detalleUsuario', { user });
@@ -41,34 +41,34 @@ let userController = {
             return res.send(error)
         })
     },
-    /*
+    
     follow: function(req, res) {
         if (!req.session.user) {
-          res.redirect('/users/'+req.params.id);
+          res.redirect('/users/detalleUsuario/'+req.params.id);
         }
         db.Follow.create({
           follower_id: req.session.user.id,
           following_id: req.params.id 
         }).then(follow => {
-          res.redirect('/users/'+req.params.id);
+          res.redirect('/users/detalleUsuario/'+req.params.id);
         }).catch(error => {
           return res.send(error);
         })
       },
       unfollow: function(req, res) {
         if (!req.session.user) {
-          res.redirect('/users/'+req.params.id);
+          res.redirect('/users/detalleUsuario/'+req.params.id);
         }
         db.Follow.destroy(
           { where: { follower_id: req.session.user.id, following_id: req.params.id }
         })
         .then(() => {
-          res.redirect('/users/'+req.params.id);
+          res.redirect('/users/detalleUsuario/'+req.params.id);
         }).catch(error => {
           return res.render(error);
         })
       },
-    */
+
 
 }
 

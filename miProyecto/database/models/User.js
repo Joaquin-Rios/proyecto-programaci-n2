@@ -42,7 +42,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const config = {
         tableName: 'users',
-        timestamps: false,
+        timestamps: true,
         underscored: false,
     }
 
@@ -53,7 +53,18 @@ module.exports = (sequelize, dataTypes) => {
             as: 'posteos',
             foreignKey: 'usuario_id'
         });
+        Users.hasMany(models.Follow, {
+            as: 'followers',
+            foreignKey: 'following_id'
+        });
+        Users.hasMany(models.Follow, {
+            as: 'following',
+            foreignKey: 'follower_id'
+        });
     };
+
+    
+        
 
     return Users;
 }

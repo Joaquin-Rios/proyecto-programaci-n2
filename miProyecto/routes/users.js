@@ -13,7 +13,7 @@ router.get('/miPerfil/:username', usersController.miPerfil);
 router.get('/editarPerfil/', usersController.editarPerfil);
 router.post('/editarPerfil/', upload.single('imagen'), usersController.guardarPerfil);
 
-//router.post('/detalleUsuario/:id/follow', usersController.follow);
-//router.post('/detalleUsuario/:id/unfollow', usersController.unfollow);
+router.get('/detalleUsuario/:id/follow', usersController.follow);
+router.get('/detalleUsuario/:id/unfollow', usersController.unfollow);
 
 module.exports = router;
