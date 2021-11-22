@@ -8,12 +8,16 @@
         <main>
             <div class="uk-section uk-section-xsmall">
                 <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
+                    <% if (app.user) { %>
+                    <% if (app.user.id == post.creador.id) { %>
                     <div class="float-end">
                         <a class="btn btn-primary" href="/posts/<%= post.id %>/editar">Editar Publicación</a>
-                           <form action="/posts/<%= post.id %>/eliminar" method="POST">
+                        <form action="/posts/<%= post.id %>/eliminar" method="POST">
                             <button type="submit" class="btn btn-primary" >Eliminar Publicación</button>
                         </form> 
                     </div>
+                    <% } %>
+                    <% } %>
                     <section class="uk-flex uk-width-2-3 detalle-container">
                         <article class="uk-width-2-3 uk-flex uk-flex-center uk-flex-middle detalle-post">
                             <img src="<%= post.imagen %>" alt="Imagen del post" class="imagen-post ">
@@ -23,8 +27,15 @@
                                 <img  src="<%= post.creador.fotoPerfil %>" alt="Foto del usuario">
                                 <h3><a href="/users/detalleUsuario/<%= post.id %>"><%= post.creador.username %></a></h3>
                             </div>
-
-                            
+                            <% if (app.user) { %>
+                                <div class="float-end">
+                                    <% if (post.likes.find(like => like.usuario_id == app.user.id)) { %>
+                                      <a href="/feed/<%= post.id %>/dislike" class="btn btn-danger">Dislike</a>
+                                    <% } else { %>
+                                      <a href="/feed/<%= post.id %>/like" class="btn btn-primary">Like</a>
+                                    <% } %>
+                            <% } %>
+                        
                             <% post.comments.forEach( comentario => {   %>
                             <div class="lista-comentarios" >
                                 <div class="comentario uk-flex uk-flex-middle uk-margin-small-top">

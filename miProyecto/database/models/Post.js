@@ -20,8 +20,8 @@ module.exports = (sequelize, dataTypes) => {
 
     const config = {
         table_name: 'posteos',
-        timestamps: false,
-        underscored: true,
+        timestamps: true,
+        underscored: false,
     }
 
     const Posteos = sequelize.define(alias, cols, config)
@@ -34,6 +34,10 @@ module.exports = (sequelize, dataTypes) => {
         Posteos.belongsTo(models.Usuarios, {
             as: 'creador',
             foreignKey: 'usuario_id'
+        });
+        Posteos.hasMany(models.Like, {
+            as: 'likes',
+            foreignKey: 'posteo_id'
         });
     };
 

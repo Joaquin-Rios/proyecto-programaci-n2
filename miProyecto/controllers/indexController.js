@@ -7,10 +7,13 @@ const validateUser = function (req) {
   const errors = [];
   if (!req.body.email) {
     errors.push('EL EMAIL ES REQUERIDO');
-  }
-  if (req.body.email == req.params.email) {
-    errors.push('EL EMAIL YA EXISTE');
-  }
+  } 
+  const email = db.Usuarios.findOne({
+    where: {email: req.body.email}
+  })
+  if (req.body.email == email) {
+    errors.push('Esta dirección de mail ya fue utilizada.')
+  }  
   if (req.body.contrasenia.length < 5) {
     errors.push('LA CONSTRASEÑA ES INSEGURA');
   }
@@ -26,10 +29,8 @@ let indexController = {
           include: [
             {association: 'creador'},
             {association: 'comments', include: [{association: 'creador'}] }
-
-          ]
+          ], order: [['id','desc']]
         })
-        
         .then((posts) => [
             res.render('index', {posts})
         ])
@@ -50,7 +51,8 @@ let indexController = {
          nombre: req.body.nombre,
          apellido: req.body.apellido,
          email: req.body.email,
-         contrasenia: bcrypt.hashSync(req.body.contrasenia, 10)
+         contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
+         fechaNacimiento: req.body.fechaNacimiento
        }) 
        .then( function() {
           return res.redirect('/login')
@@ -91,11 +93,38 @@ let indexController = {
               {imagen : {[op.like]: "%"+req.query.criteria+"%"} },
             ]},
             include: [{association: 'creador'}],
-            order:[['imagen','desc']]
+            order:[['id','desc']]
           })
            
           res.render('buscador', { posts, criteria: req.query.criteria });
     },
+    like: function(req, res) {
+      if (!req.session.user) {
+        res.redirect('/posts/'+req.params.id);
+      }
+      db.Like.create({
+        usuario_id: req.session.user.id,
+        posteo_id: req.params.id 
+      }).then(like => {
+        res.redirect('/posts/'+req.params.id);
+      }).catch(error => {
+        return res.send(error);
+      })
+    },
+    dislike: function(req, res) {
+      if (!req.session.user) {
+        res.redirect('/posts/'+req.params.id);
+      }
+      db.Like.destroy(
+        { where: { usuario_id: req.session.user.id, posteo_id: req.params.id }
+      })
+      .then(() => {
+        res.redirect('/posts/'+req.params.id);
+      }).catch(error => {
+        return res.render(error);
+      })
+    },
+
 }
 
 

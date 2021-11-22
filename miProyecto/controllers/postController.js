@@ -11,6 +11,7 @@ let postsController = {
         const post = await db.Posteos.findByPk(req.params.id, {
             include: [
                 {association: 'creador'},
+                {association: 'likes'},
                 {association: 'comments', include: [{association: 'creador'}],
             }]
         });

@@ -13,8 +13,10 @@ router.all('/logout', indexController.logout);
 router.all('/login', indexController.login);
 
 
-
 router.get('/fotoPerfil', indexController.fotoPerfil);
 router.get('/buscador', indexController.buscador)
+
+router.get('/feed/:id/like', indexController.like);
+router.get('/feed/:id/dislike', indexController.dislike);
 
 module.exports = router;
