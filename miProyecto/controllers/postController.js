@@ -13,7 +13,7 @@ let postsController = {
                 {association: 'creador'},
                 {association: 'likes'},
                 {association: 'comments', include: [{association: 'creador'}],
-            }]
+            }], order: [["comments", "id", "desc"]]
         });
         if (!post) {
             return res.render('error')

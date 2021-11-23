@@ -19,7 +19,7 @@ let userController = {
         if (req.session.user) {
             let user = await db.Usuarios.findOne({
                 where: {username: req.params.username},
-                include: [{association: 'posteos'}]  
+                include: [{association: 'posteos'}, {association: 'followers'}, {association: 'following'}]  
             });
             res.render('miPerfil', {user});
         }else{
