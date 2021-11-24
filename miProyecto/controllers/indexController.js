@@ -54,7 +54,7 @@ let indexController = {
          contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
          fechaNacimiento: req.body.fechaNacimiento
        }) 
-       .then( function() {
+       .then(function() {
           return res.redirect('/login')
        }) .catch( error => {
           return res.send(error)
