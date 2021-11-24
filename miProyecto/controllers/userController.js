@@ -65,7 +65,7 @@ let userController = {
         .then(() => {
           res.redirect('/users/detalleUsuario/'+req.params.id);
         }).catch(error => {
-          return res.render(error);
+          return res.send(error);
         })
       },
 

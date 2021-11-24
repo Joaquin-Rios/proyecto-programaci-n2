@@ -47,7 +47,7 @@ app.use(async (req, res, next) => {
   next();
 });
 
-//Middleware de seassion
+//Middleware de session
 app.use(async (req, res, next) => {
   res.locals.app = {};
   if (req.session.user !== undefined) {

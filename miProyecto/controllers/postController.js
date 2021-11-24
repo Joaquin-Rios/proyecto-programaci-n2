@@ -4,9 +4,7 @@
 const db = require('../database/models');
 
 let postsController = {
-    agregarPost : function(req, res) {
-        res.render('agregarPost');
-    },
+    
     detallePost : async function(req, res) {
         const post = await db.Posteos.findByPk(req.params.id, {
             include: [
@@ -35,6 +33,9 @@ let postsController = {
             return res.send(error)
         })
     },
+    agregarPost : function(req, res) {
+        res.render('agregarPost');
+    },
     guardado : function(req, res) {
         if (req.file) req.body.imagen = (req.file.destination + req.file.filename).replace('public', '');
         db.Posteos.create({
@@ -62,7 +63,7 @@ let postsController = {
         ) .then( post => {
             res.redirect('/')
         }) .catch( error => {
-            return res.render(error)
+            return res.send(error)
         })
     },
     eliminarPost :  function(req, res) {

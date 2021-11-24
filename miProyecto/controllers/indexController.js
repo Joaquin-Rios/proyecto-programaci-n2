@@ -66,13 +66,13 @@ let indexController = {
               if (!user) {
                 res.send('NO EXISTE EL USUARIO')
               }
-              if (bcrypt.compareSync(req.body.contrasenia,user.contrasenia)){
-                req.session.user = user;
-                res.cookie('user', user, { maxAge: 1000 * 60 * 60 * 24 * 30 })
-                res.redirect('/');                
-              } else {
-                res.send('LA CONSTRASEÑA ES INCORRECTA')
-              }
+                if (bcrypt.compareSync(req.body.contrasenia,user.contrasenia)){
+                  req.session.user = user;
+                  res.cookie('user', user, { maxAge: 1000 * 60 * 60 * 24 * 30 })
+                  res.redirect('/');                
+                } else {
+                  res.send('LA CONSTRASEÑA ES INCORRECTA')
+                }
             } else {
               res.render('login');
             }            
@@ -121,7 +121,7 @@ let indexController = {
       .then(() => {
         res.redirect('/posts/'+req.params.id);
       }).catch(error => {
-        return res.render(error);
+        return res.send(error);
       })
     },
 
